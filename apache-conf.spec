@@ -4,7 +4,7 @@
 Summary:	Configuration files for Apache
 Name:		apache-conf
 Version:	2.2.4
-Release:	%mkrel 4
+Release:	%mkrel 5
 License:	Apache License
 Group:		System/Servers
 URL:		http://www.mandriva.com
@@ -180,21 +180,12 @@ fi
 
 %post
 %_post_service httpd
-if [ -f /var/lock/subsys/httpd ]; then
-    %{_initrddir}/httpd restart 1>&2;
-fi
 
 %preun
 %_preun_service httpd
 
 %postun
 %_postun_userdel apache
-
-if [ "$1" = "0" ]; then
-    if [ -f /var/lock/subsys/httpd ]; then
-        %{_initrddir}/httpd restart 1>&2
-    fi
-fi
 
 %clean
 [ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
@@ -246,5 +237,3 @@ fi
 %attr(0644,root,root) %config(noreplace) /var/www/html/robots.txt
 %attr(0755,root,root) %{_sbindir}/*
 %{_datadir}/ADVX
-
-
