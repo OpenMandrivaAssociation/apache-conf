@@ -4,7 +4,7 @@
 Summary:	Configuration files for Apache
 Name:		apache-conf
 Version:	2.2.4
-Release:	%mkrel 6
+Release:	%mkrel 7
 License:	Apache License
 Group:		System/Servers
 URL:		http://www.mandriva.com
@@ -72,7 +72,6 @@ install -d %{buildroot}%{_sysconfdir}/httpd/conf/addon-modules
 install -d %{buildroot}%{_sysconfdir}/logrotate.d
 install -d %{buildroot}%{_sysconfdir}/sysconfig
 
-install -d %{buildroot}/var/cache/httpd
 install -d %{buildroot}/var/log/httpd
 install -d %{buildroot}/var/www/cgi-bin
 install -d %{buildroot}/var/www/html/addon-modules
@@ -212,7 +211,6 @@ fi
 
 %attr(0755,apache,apache) %dir /var/www
 %attr(0755,root,root) %dir /var/www/html
-%attr(0755,apache,apache) %dir /var/cache/httpd
 
 %dir /var/log/httpd
 %dir /var/www/cgi-bin
