@@ -4,7 +4,7 @@
 Summary:	Configuration files for Apache
 Name:		apache-conf
 Version:	2.2.4
-Release:	%mkrel 7
+Release:	%mkrel 8
 License:	Apache License
 Group:		System/Servers
 URL:		http://www.mandriva.com
@@ -26,7 +26,6 @@ Requires(post): rpm-helper
 Requires(preun): rpm-helper
 Requires(pre): rpm-helper
 Requires(postun): rpm-helper
-BuildRequires:	dietlibc-devel >= 0.20-1mdk
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
@@ -53,8 +52,9 @@ cp %{SOURCE11} .
 cp %{SOURCE12} .
 
 %build
+%serverbuild
 
-diet gcc -Os -s -static -nostdinc -o advxsplitlogfile-DIET advxsplitlogfile.c
+gcc $CFLAGS -o advxsplitlogfile.bin advxsplitlogfile.c
 
 %install
 [ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
@@ -79,8 +79,8 @@ install -d %{buildroot}/var/www/icons
 install -d %{buildroot}/var/www/perl
 install -d %{buildroot}%{_datadir}/ADVX
 
-install -m0755 advxsplitlogfile-DIET %{buildroot}%{_sbindir}/
-install -m0644 advxsplitlogfile %{buildroot}%{_sbindir}/
+install -m0755 advxsplitlogfile.bin %{buildroot}%{_sbindir}/advxsplitlogfile
+install -m0755 advxsplitlogfile %{buildroot}%{_sbindir}/advxsplitlogfile.pl
 install -m0755 apache-2.0.40-testscript.pl %{buildroot}/var/www/cgi-bin/test.cgi
 install -m0755 apache-2.0.40-testscript.pl %{buildroot}/var/www/perl/test.pl
 install -m0755 httpd.init %{buildroot}%{_initrddir}/httpd
