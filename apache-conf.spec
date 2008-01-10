@@ -3,7 +3,7 @@
 
 Summary:	Configuration files for Apache
 Name:		apache-conf
-Version:	2.2.7
+Version:	2.2.8
 Release:	%mkrel 0.1
 License:	Apache License
 Group:		System/Servers
