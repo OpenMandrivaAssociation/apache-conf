@@ -3,8 +3,8 @@
 
 Summary:	Configuration files for Apache
 Name:		apache-conf
-Version:	2.2.8
-Release:	%mkrel 5
+Version:	2.2.9
+Release:	%mkrel 0.1
 License:	Apache License
 Group:		System/Servers
 URL:		http://www.mandriva.com
@@ -26,7 +26,7 @@ Requires(post): rpm-helper
 Requires(preun): rpm-helper
 Requires(pre): rpm-helper
 Requires(postun): rpm-helper
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 This package contains configuration files for apache. It is necessary for
