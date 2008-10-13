@@ -3,8 +3,8 @@
 
 Summary:	Configuration files for Apache
 Name:		apache-conf
-Version:	2.2.9
-Release:	%mkrel 2
+Version:	2.2.10
+Release:	%mkrel 1
 License:	Apache License
 Group:		System/Servers
 URL:		http://www.mandriva.com
