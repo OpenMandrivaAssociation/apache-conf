@@ -8,7 +8,7 @@ Release:	%mkrel 1
 License:	Apache License
 Group:		System/Servers
 URL:		http://www.mandriva.com
-Source0:	%{name}-%{version}.tar.bz2
+Source0:	%{name}-%{version}.tar.gz
 Source1:	httpd.init
 Source2:	httpd.sysconf
 Source3:	httpd.conf
