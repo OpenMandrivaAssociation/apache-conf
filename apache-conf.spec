@@ -1,7 +1,7 @@
 Summary:	Configuration files for Apache
 Name:		apache-conf
 Version:	2.2.14
-Release:	%mkrel 0.1
+Release:	%mkrel 0.2
 License:	Apache License
 Group:		System/Servers
 URL:		http://www.mandriva.com
@@ -18,7 +18,7 @@ Source10:	robots.txt
 Source11:	00_default_vhosts.conf
 Source12:	mod_ssl-gentestcrt.sh
 Source13:	apache-2.0.40-testscript.pl
-Source14:	favicon.ico
+Source14:	http://www.mandriva.com/files/mandriva_customer_favicon.ico
 Requires:	lynx >= 2.8.5
 Requires(post): rpm-helper
 Requires(preun): rpm-helper
@@ -50,7 +50,7 @@ cp %{SOURCE10} .
 cp %{SOURCE11} .
 cp %{SOURCE12} .
 cp %{SOURCE13} .
-cp %{SOURCE14} .
+cp %{SOURCE14} favicon.ico
 
 %build
 %serverbuild
