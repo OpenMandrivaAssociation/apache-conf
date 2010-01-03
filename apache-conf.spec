@@ -1,7 +1,7 @@
 Summary:	Configuration files for Apache
 Name:		apache-conf
 Version:	2.2.14
-Release:	%mkrel 3
+Release:	%mkrel 4
 License:	Apache License
 Group:		System/Servers
 URL:		http://www.mandriva.com
@@ -19,6 +19,7 @@ Source11:	00_default_vhosts.conf
 Source12:	mod_ssl-gentestcrt.sh
 Source13:	apache-2.0.40-testscript.pl
 Source14:	http://www.mandriva.com/files/mandriva_customer_favicon.ico
+Source15:	webapp.script
 Requires:	lynx >= 2.8.5
 Requires(post): rpm-helper
 Requires(preun): rpm-helper
@@ -144,6 +145,14 @@ cat > %{buildroot}%{_sysconfdir}/logrotate.d/httpd << EOF
 }
 EOF
 
+# rpm filetriggers
+install -d -m 755 %{buildroot}%{_localstatedir}/lib/rpm/filetriggers
+cat > %buildroot%{_localstatedir}/lib/rpm/filetriggers/webapp.filter << EOF
+^./etc/httpd/conf/webapps.d/.*\.conf$
+EOF
+install -m 755 %{SOURCE15} \
+    %{buildroot}%{_localstatedir}/lib/rpm/filetriggers/webapp.script
+
 %pre
 %_pre_useradd apache /var/www /bin/sh
 
@@ -202,3 +211,4 @@ rm -rf %{buildroot}
 %attr(0644,root,root) %config(noreplace) /var/www/html/index.html
 %attr(0644,root,root) %config(noreplace) /var/www/html/robots.txt
 %attr(0755,root,root) %{_sbindir}/*
+%{_localstatedir}/lib/rpm/filetriggers/webapp.*
