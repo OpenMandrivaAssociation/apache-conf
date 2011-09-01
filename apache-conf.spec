@@ -1,6 +1,6 @@
 Summary:	Configuration files for Apache
 Name:		apache-conf
-Version:	2.2.19
+Version:	2.2.20
 Release:	%mkrel 1
 License:	Apache License
 Group:		System/Servers
