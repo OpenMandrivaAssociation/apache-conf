@@ -1,7 +1,16 @@
+%if %mandriva_branch == Cooker
+# Cooker
+%define release %mkrel 1
+%else
+# Old distros
+%define subrel 1
+%define release %mkrel 0
+%endif
+
 Summary:	Configuration files for Apache
 Name:		apache-conf
 Version:	2.2.22
-Release:	%mkrel 0.0.1
+Release:	%release
 License:	Apache License
 Group:		System/Servers
 URL:		http://www.mandriva.com
