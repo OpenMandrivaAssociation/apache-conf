@@ -1,0 +1,15 @@
+00_default_vhosts.conf
+advxsplitlogfile.c
+advxsplitlogfile.pl
+apache-2.0.40-testscript.pl
+fileprotector.conf
+httpd.conf
+httpd.init
+httpd.sysconf
+index.html
+magic
+mandriva_customer_favicon.ico
+mime.types
+mod_ssl-gentestcrt.sh
+robots.txt
+webapp.script
