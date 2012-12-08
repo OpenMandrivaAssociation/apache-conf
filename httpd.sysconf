@@ -1,0 +1,55 @@
+# $Id: httpd.sysconf 353267 2009-03-09 17:19:07Z oden $
+# $HeadURL: http://svn.mandriva.com/svn/packages/cooker/apache-conf/current/SOURCES/httpd.sysconf $
+# Configuration file for the httpd service.
+
+#
+# The default processing model (MPM) is the process-based
+# 'prefork' model.  A thread-based model, 'worker', is also
+# available, but does not work with some modules (such as PHP).
+# The service must be stopped before changing this variable.
+# 
+# Currently you can choose one of the following binaries
+# (if installed):
+#   * httpd         (prefork, stable)
+#   * httpd-event   (experimental)
+#   * httpd-worker  (stable)
+#   * httpd-peruser (experimental)
+#   * httpd-itk     (experimental)
+#
+# HTTPD="/usr/sbin/httpd"
+# HTTPD="/usr/sbin/httpd-worker"
+
+# use this for apache
+# HTTPD="/usr/sbin/httpd"
+# HTTPDCONF="-f /etc/httpd/conf/httpd.conf"
+# DEBUG="-DNO_DETACH -DONE_PROCESS -DDEBUG"
+
+#
+# To pass additional options (for instance, -D definitions) to the
+# httpd binary at startup, set OPTIONS here.
+#
+# OPTIONS=
+
+#
+# By default, the httpd process is started in the C locale; to 
+# change the locale in which the server runs, the HTTPD_LANG
+# variable can be set.
+#
+# HTTPD_LANG="C"
+
+# set safe temp
+# HTTPD_TMP=/tmp
+# HTTPD_TMPDIR=/tmp
+
+### Hack for Status
+# STATUSURL="http://localhost/server-status"
+
+# optinally set limits here using ulimit.
+# for example the php-pcre module may have to a use higher stack size
+# (ie. -s 16384) to prevent segfaults as proven by this bug:
+# https://qa.mandriva.com/show_bug.cgi?id=30849
+
+# you could also raise the default open files limits here (ie. -n 4096 -s 16384)
+#
+# ULIMIT_OPTIONS="-n 4096 -s 16384"
+
