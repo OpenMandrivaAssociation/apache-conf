@@ -1,10 +1,10 @@
 %if %mandriva_branch == Cooker
 # Cooker
-%define release 6
+%define release 7
 %else
 # Old distros
 %define subrel 1
-%define release 5
+%define release 6
 %endif
 
 Summary:	Configuration files for Apache
