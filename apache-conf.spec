@@ -13,7 +13,7 @@ Version:	2.2.22
 Release:	%release
 License:	Apache License
 Group:		System/Servers
-URL:		http://www.mandriva.com
+URL:		https://www.mandriva.com
 Source1:	httpd.init
 Source2:	httpd.sysconf
 Source3:	httpd.conf
